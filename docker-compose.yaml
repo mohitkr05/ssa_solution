@@ -1,0 +1,10 @@
+# Docker compose
+version: '2'
+# Microservices 
+services:
+  rea:
+    container_name: rea_sinatra_app
+    build: ./
+    ports:
+      - "80:9292"
+
