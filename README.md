@@ -154,6 +154,8 @@ The result would be the IP address that can be used to access the instance.
 7. Do not forget to destroy after testing  - `terraform destroy`
    
    ## Scope of Improvements
+   
+   
 - The *initial user data* script to configure the EC2 isntance can also be called from a file which can be modified as per the user requirements.
 
 - The solution is not resillient and thus not suitable for production.
@@ -164,6 +166,9 @@ The result would be the IP address that can be used to access the instance.
 
 - The application can be deployed on FAAS/PAAS offerings from AWS such as Lambda functions for economical cost and efficient usage and can provide better resillience.
 
-- The monitoring capabilities needs to be added to monitor and perform preventive and corrective actions for the infrastructure
+- The monitoring capabilities needs to be added to monitor and perform preventive and corrective actions for the infrastructure (that can further help in improvements)
   
-  
+
+
+
+:)
