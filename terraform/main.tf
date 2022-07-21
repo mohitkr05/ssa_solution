@@ -197,12 +197,12 @@ resource "aws_instance" "appserver" {
     appEnvironment = var.tag_app_environment
   }
 
-  user_data = <<-EOF
+  user_data = <<EOF
                 #!/bin/bash
                 sudo apt update -y
                 sudo apt install -y git
-                git clone https://github.com/mohitkr05/simple-sinatra-app
-                sudo bash simple-sinatra-app/deploy.sh
+                git clone https://github.com/mohitkr05/ssa_solution 
+                sudo bash ssa_solution/deploy.sh
                 EOF
              
 }

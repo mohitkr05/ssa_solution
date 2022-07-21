@@ -8,6 +8,17 @@ variable "aws_region" {
     default = "ap-south-1" 
 }
 
+# To be loaded from the environment variables.
+variable "secret_key" {
+    type = string
+    default = ""
+}
+
+variable "access_key" {
+    type = string
+    default = ""
+}
+
 variable "availability_zone" {
   type = string
   default = "ap-south-1b"
@@ -120,4 +131,19 @@ variable "ec2_private_ip" {
 variable "ssh_key" {
     type = string
     default = "main"
+}
+
+
+
+## Output Variables
+output "instance_ip_addr" {
+  value = aws_instance.appserver.public_ip
+}
+
+output "instance_public_dns" {
+  value = aws_instance.appserver.public_dns
+}
+
+output "instance_instance_state" {
+  value = aws_instance.appserver.instance_state
 }
