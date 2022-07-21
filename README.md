@@ -6,23 +6,23 @@ For me it is a learning experience as I was able to use terraform (which I have 
 
 ## Goals
 
-- [ ] Create the server (can be local VM or AWS based)  
+- [x] Create the server (can be local VM or AWS based)  
   
   > Deployed an EC2 machine on AWS using Terraform as IAC
 
-- [ ] Configure an OS image (your choice) appropriately 
+- [x] Configure an OS image (your choice) appropriately 
   
   > Deployed Ubuntu 20.04 AMI as OS with Docker as container engine
 
-- [ ] Deploy the provided application.
+- [x] Deploy the provided application.
   
   > Dockerized the application that can be deployed on top of container host
 
-- [ ] Make the application available on port 80 
+- [x] Make the application available on port 80 
   
   > Exposed the application on port 80
 
-- [ ] Ensure that the server is locked down and secure.
+- [x] Ensure that the server is locked down and secure.
   
   > Server is isolated from the outside world using custom VPCs, Security Groups and Network ACL's
 
@@ -57,12 +57,15 @@ For me it is a learning experience as I was able to use terraform (which I have 
 - Text editor
 - Network connectivity
 
-<img title="" src="snapshots/architecture.png" alt="" data-align="center" width="837">
-
 ### Method of procedure to execute the code
 
-- The infrastructure as a code has the following flow chart
-- The following configuration is stored in .env file that can be changed by the user
+- To deploy the infrastructure , following steps have to be followed
+  - Edit the variables.tf file to customize the configuration
+  - Make sure you store the AWS credentials in AWS CLI or in the environment variables.
+  - Perform a terraform plan & perform terraform apply 
+  - Grab a coffee and check the Instance public IP in the browser. 
+  
+  
 
 #### Variables
 
@@ -149,12 +152,18 @@ The result would be the IP address that can be used to access the instance.
 ![](snapshots/browser-snapshot.png)
 
 7. Do not forget to destroy after testing  - `terraform destroy`
-## Scope of Improvements
-
+   
+   ## Scope of Improvements
 - The *initial user data* script to configure the EC2 isntance can also be called from a file which can be modified as per the user requirements.
 
 - The solution is not resillient and thus not suitable for production.
 
+- The container host and base images are not scanned for any vulnerabilities.
+
+- The docker image needs to be improved for production.
+
 - The application can be deployed on FAAS/PAAS offerings from AWS such as Lambda functions for economical cost and efficient usage and can provide better resillience.
 
 - The monitoring capabilities needs to be added to monitor and perform preventive and corrective actions for the infrastructure
+  
+  
